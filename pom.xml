@@ -6,12 +6,18 @@
 
     <artifactId>hapi-cys-app</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <url>https://github.com/yushiChen1995/hapi-cys-app.git</url>
 
     <parent>
         <artifactId>cys-parent</artifactId>
         <groupId>com.cys.services</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+
+
+    <properties>
+        <user-interface_vsersion>1.0-SNAPSHOT</user-interface_vsersion>
+    </properties>
 
     <!--web启动器-->
     <dependencies>
@@ -25,5 +31,16 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.cys.services</groupId>
+            <artifactId>cys-user-interface</artifactId>
+            <version>${user-interface_vsersion}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
     </dependencies>
 </project>
