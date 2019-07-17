@@ -17,6 +17,8 @@
 
     <properties>
         <user-interface_vsersion>1.0-SNAPSHOT</user-interface_vsersion>
+        <xxl_job_vsersion>2.0.1</xxl_job_vsersion>
+
     </properties>
 
     <!--web启动器-->
@@ -41,6 +43,14 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
+
+        <!-- http://repo1.maven.org/maven2/com/xuxueli/xxl-job-core/ -->
+        <dependency>
+            <groupId>com.xuxueli</groupId>
+            <artifactId>xxl-job-core</artifactId>
+            <version>${xxl_job_vsersion}</version>
+        </dependency>
+
 
     </dependencies>
 </project>

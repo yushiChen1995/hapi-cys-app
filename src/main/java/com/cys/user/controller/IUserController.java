@@ -1,5 +1,6 @@
 package com.cys.user.controller;
 
+import com.cys.pojo.Response;
 import com.cys.user.contract.req.CreateUserInfoRequest;
 import com.cys.user.contract.resp.QueryUserInfoResult;
 import com.cys.user.pojo.User;
@@ -25,8 +26,11 @@ public interface IUserController {
      */
     @PostMapping("registerUser")
     @ApiOperation(value="用户注册" , notes="根据手机号注册")
-    ResponseEntity<QueryUserInfoResult> registerUser(@RequestBody @Valid CreateUserInfoRequest request);
+    Response<QueryUserInfoResult> registerUser(@RequestBody @Valid CreateUserInfoRequest request);
 
     @GetMapping("/user/{id}")
     ResponseEntity<User> queryUser(@PathVariable("id") Long id);
+
+    @GetMapping("/user/testApollo")
+    String testApollo();
 }

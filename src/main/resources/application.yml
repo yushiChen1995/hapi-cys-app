@@ -8,10 +8,30 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:10086/eureka #eureka注册中心的位置
+      defaultZone: http://192.168.182.129:8080/eureka #eureka注册中心的位置
   instance:
     lease-renewal-interval-in-seconds: 5 #每隔5秒发送一次心跳
     lease-expiration-duration-in-seconds: 20 # 20秒不发就默认过期
     prefer-ip-address: true  #当调用getHostname获取实例的hostname时，返回ip而不是host名称
     ip-address: 127.0.0.1 #指定自己的ip信息
     instance-id: ${spring.application.name}:${server.port} #区分同一服务的不同实例的唯一标准，因此不能重复。
+ribbon:
+  ReadTimeout: 3000
+  ConnectTimeout: 3000
+
+
+#xxjob配置信息
+xxl:
+  job:
+    admin:
+      addresses: http://127.0.0.1:8080/xxl-job-admin
+    executor:
+      appname: test
+      ip: 192.168.0.86
+      port: 9999
+      logpath: /data/applogs/xxl-job/jobhandler
+      logretentiondays: -1
+    accessToken:
+
+
+
